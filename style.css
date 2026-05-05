@@ -1,13 +1,14 @@
 html { scroll-behavior: smooth; }
 
 :root {
-  --bg-dark: #050508;
-  --bg-card: #0f111a;
-  --text-primary: #ffffff;
-  --text-muted: #a0a4b8;
-  --brand-color: #4f46e5; /* Professional Indigo */
-  --accent-silver: #94a3b8;
-  --glow: 0 0 20px rgba(79, 70, 229, 0.3);
+  /* Updated to match the logo's deep navy and metallic silver */
+  --bg-dark: #020617; /* Deep midnight blue */
+  --bg-card: #0f172a; /* Slate navy */
+  --text-primary: #f8fafc; /* Crisp silver-white */
+  --text-muted: #94a3b8; /* Steel grey */
+  --brand-color: #cbd5e1; /* Brushed Chrome/Silver */
+  --accent-blue: #1e40af; /* Deep blue from the circuit lines */
+  --glow: 0 0 20px rgba(148, 163, 184, 0.2);
 }
 
 body {
@@ -21,26 +22,29 @@ body {
 header {
   padding: 100px 20px;
   text-align: center;
-  background: radial-gradient(circle at top, #1e1b4b 0%, #050508 100%);
+  /* Gradient matches the logo's background depth */
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
 }
 
 .main-logo {
   width: 100%;
-  max-width: 450px; /* Sized for professionalism */
+  max-width: 550px; /* Slightly larger to show off the intricate detail */
   height: auto;
   margin-bottom: 30px;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+  filter: drop-shadow(0 0 15px rgba(30, 64, 175, 0.3));
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   letter-spacing: -1px;
   margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: var(--accent-silver);
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto 40px auto;
 }
@@ -60,19 +64,21 @@ h1 {
 }
 
 .btn-primary {
+  /* Metallic Chrome Button */
   background-color: var(--brand-color);
-  color: white;
+  color: #0f172a;
   box-shadow: var(--glow);
 }
 
 .btn-outline {
-  border: 1px solid var(--accent-silver);
+  border: 1px solid var(--accent-blue);
   color: var(--text-primary);
+  background: rgba(30, 64, 175, 0.1);
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .services-section {
@@ -86,6 +92,8 @@ h2 {
   font-size: 2rem;
   margin-bottom: 50px;
   color: var(--brand-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .service-grid {
@@ -103,8 +111,9 @@ h2 {
 }
 
 .card:hover {
-  border-color: var(--brand-color);
-  background: #161a29;
+  border-color: var(--accent-blue);
+  background: #1e293b;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
 }
 
 .card h3 {
@@ -128,22 +137,23 @@ h2 {
 
 footer {
   padding: 80px 20px;
-  background: #020203;
+  background: #010409;
   text-align: center;
   border-top: 1px solid #1e293b;
 }
 
 .footer-details {
     margin: 20px 0;
-    color: var(--accent-silver);
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 .privacy-box {
   max-width: 600px;
   margin: 30px auto;
   font-size: 0.8rem;
-  color: #64748b;
-  border-left: 2px solid var(--brand-color);
+  color: #475569;
+  border-left: 2px solid var(--accent-blue);
   padding-left: 20px;
   text-align: left;
 }
