@@ -1,159 +1,187 @@
-html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; } /* Enables fluid scrolling for internal anchor link navigation */
 
-:root {
-  /* Updated to match the logo's deep navy and metallic silver */
-  --bg-dark: #020617; /* Deep midnight blue */
-  --bg-card: #0f172a; /* Slate navy */
-  --text-primary: #f8fafc; /* Crisp silver-white */
-  --text-muted: #94a3b8; /* Steel grey */
-  --brand-color: #cbd5e1; /* Brushed Chrome/Silver */
-  --accent-blue: #1e40af; /* Deep blue from the circuit lines */
-  --glow: 0 0 20px rgba(148, 163, 184, 0.2);
-}
+        :root {
+            --bg-dark: #020617; /* Primary background color: Deep midnight blue */
+            --bg-card: #0f172a; /* Card component background: Slate navy */
+            --text-primary: #f8fafc; /* Primary text color: Crisp silver-white */
+            --text-muted: #94a3b8; /* Secondary/Muted text color: Steel grey */
+            --brand-color: #cbd5e1; /* Branding accent: Brushed Chrome/Silver */
+            --accent-blue: #1e40af; /* Primary functional accent: Deep blue */
+            --glow: 0 0 20px rgba(148, 163, 184, 0.2); /* Reusable box-shadow for glowing interface elements */
+        }
 
-body {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  color: var(--text-primary);
-  background-color: var(--bg-dark);
-  margin: 0;
-  line-height: 1.6;
-}
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; /* Defines typography stack with modern system fallbacks */
+            color: var(--text-primary); /* Applies the primary text color variable to the document body */
+            background-color: var(--bg-dark); /* Applies the deep midnight blue background variable */
+            margin: 0; /* Removes default browser margin for full-bleed layout */
+            line-height: 1.6; /* Sets optimal vertical spacing for body text readability */
+        }
 
-header {
-  padding: 100px 20px;
-  text-align: center;
-  /* Gradient matches the logo's background depth */
-  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
-}
+        header {
+            padding: 100px 20px; /* Vertical and horizontal spacing for the hero section */
+            text-align: center; /* Centers all content within the header container */
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%); /* Depth-simulating background gradient */
+        }
 
-.main-logo {
-  width: 100%;
-  max-width: 550px; /* Slightly larger to show off the intricate detail */
-  height: auto;
-  margin-bottom: 30px;
-  filter: drop-shadow(0 0 15px rgba(30, 64, 175, 0.3));
-}
+        .main-logo {
+            width: 100%; /* Responsive logo width relative to parent container */
+            max-width: 550px; /* Limits logo size to prevent visual over-scaling */
+            height: auto; /* Maintains aspect ratio during resizing */
+            margin-bottom: 30px; /* Spacing between logo and the following subtitle */
+            filter: drop-shadow(0 0 15px rgba(30, 64, 175, 0.3)); /* Adds a soft blue glow effect to the logo SVG/PNG */
+        }
 
-h1 {
-  font-size: 2.8rem;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
+        .subtitle {
+            font-size: 1.2rem; /* Sets font size for the secondary header text */
+            color: var(--text-muted); /* Applies the steel grey color for visual hierarchy */
+            max-width: 600px; /* Restricts line length for improved readability */
+            margin: 0 auto 40px auto; /* Centers the block and provides bottom spacing for action buttons */
+        }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 40px auto;
-}
+        .action-container {
+            display: flex; /* Uses Flexbox to align buttons horizontally */
+            justify-content: center; /* Horizontally centers the buttons within the container */
+            gap: 20px; /* Defines fixed spacing between flex items */
+        }
 
-.action-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+        .btn {
+            text-decoration: none; /* Removes default underline from anchor-based buttons */
+            padding: 14px 30px; /* Sets vertical and horizontal internal button spacing */
+            border-radius: 8px; /* Applies rounded corners to the button box */
+            font-weight: 600; /* Sets semi-bold weight for button labels */
+            transition: 0.3s; /* Defines duration for all property transitions (hover effects) */
+            display: inline-block; /* Allows vertical padding while keeping inline flow properties */
+        }
 
-.btn {
-  text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.3s;
-}
+        .btn-primary {
+            background-color: var(--brand-color); /* Sets the chrome/silver background for primary actions */
+            color: #0f172a; /* High-contrast text color for the metallic background */
+            box-shadow: var(--glow); /* Applies the predefined glow effect for depth */
+        }
 
-.btn-primary {
-  /* Metallic Chrome Button */
-  background-color: var(--brand-color);
-  color: #0f172a;
-  box-shadow: var(--glow);
-}
+        .btn-outline {
+            border: 1px solid var(--accent-blue); /* Defines the blue border for secondary actions */
+            color: var(--text-primary); /* Sets text color to white for the outline variant */
+            background: rgba(30, 64, 175, 0.1); /* Adds a subtle semi-transparent blue tint to the background */
+        }
 
-.btn-outline {
-  border: 1px solid var(--accent-blue);
-  color: var(--text-primary);
-  background: rgba(30, 64, 175, 0.1);
-}
+        .btn:hover {
+            transform: translateY(-2px); /* Lifts the button slightly on hover for tactile feedback */
+            filter: brightness(1.1); /* Slightly increases lightness of the button during hover */
+        }
 
-.btn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
+        .services-section {
+            padding: 80px 20px; /* Defines spacing above and below the solutions grid */
+            max-width: 1100px; /* Constraints grid width for large-screen readability */
+            margin: 0 auto; /* Centers the section horizontally */
+        }
 
-.services-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+        h2 {
+            text-align: center; /* Centers the section title text */
+            font-size: 2rem; /* Heading size for section titles */
+            margin-bottom: 50px; /* Spacing between the title and the grid items */
+            color: var(--brand-color); /* Uses the metallic chrome color for section headings */
+            text-transform: uppercase; /* Converts text to all caps for enterprise aesthetic */
+            letter-spacing: 2px; /* Adds horizontal space between letters for a technical look */
+        }
 
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 50px;
-  color: var(--brand-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+        .service-grid {
+            display: grid; /* Enables CSS Grid for the services layout */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid that wraps items automatically */
+            gap: 30px; /* Defines the gutter space between grid items */
+        }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
+        .card {
+            background: var(--bg-card); /* Applies the slate navy background for cards */
+            padding: 40px; /* Internal spacing within the service cards */
+            border-radius: 12px; /* Defines the rounding of card corners */
+            border: 1px solid #1e293b; /* Sets a dark border to define card edges */
+            transition: 0.3s; /* Smooth transition for hover border and shadow changes */
+            display: flex; /* Uses flexbox for internal card vertical alignment */
+            flex-direction: column; /* Stacks card content vertically */
+        }
 
-.card {
-  background: var(--bg-card);
-  padding: 40px;
-  border-radius: 12px;
-  border: 1px solid #1e293b;
-  transition: 0.3s;
-}
+        .card:hover {
+            border-color: var(--accent-blue); /* Changes border to blue on hover */
+            background: #1e293b; /* Slightly lightens the card background on hover */
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); /* Adds a deep shadow to simulate elevation on hover */
+        }
 
-.card:hover {
-  border-color: var(--accent-blue);
-  background: #1e293b;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-}
+        .card h3 {
+            color: white; /* Sets card headings to pure white */
+            margin-bottom: 15px; /* Spacing below the card title */
+        }
 
-.card h3 {
-  color: white;
-  margin-bottom: 15px;
-}
+        .card p {
+            color: var(--text-muted); /* Applies steel grey for the card description text */
+            font-size: 0.95rem; /* Slightly smaller text for secondary information */
+            flex-grow: 1; /* Pushes action buttons to the bottom by taking up remaining card space */
+        }
 
-.card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
+        .card-actions {
+            margin-top: 20px; /* Spacing between the description and action links */
+            display: flex; /* Enables flex container for card actions */
+            flex-direction: column; /* Stacks the email link and call button vertically */
+            gap: 12px; /* Spacing between the email link and call button */
+        }
 
-.card-btn {
-  color: var(--brand-color);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  display: block;
-  margin-top: 20px;
-}
+        .card-btn {
+            color: var(--brand-color); /* Uses chrome color for text-based links */
+            text-decoration: none; /* Removes link underline */
+            font-weight: bold; /* Bold weight for the text action */
+            font-size: 0.9rem; /* Font size for the text link */
+        }
 
-footer {
-  padding: 80px 20px;
-  background: #010409;
-  text-align: center;
-  border-top: 1px solid #1e293b;
-}
+        .btn-call {
+            background-color: var(--accent-blue); /* Primary blue background for call buttons */
+            color: white; /* White text for visibility on blue background */
+            padding: 10px 20px; /* Padding for the smaller card-level button */
+            border-radius: 6px; /* Slightly tighter corner radius for secondary buttons */
+            text-align: center; /* Centers the button label */
+            font-size: 0.85rem; /* Compact font size for the button text */
+            text-decoration: none; /* Removes link underline */
+            font-weight: 600; /* Semi-bold weight for button text */
+            transition: 0.2s; /* Snappy transition for hover states */
+        }
 
-.footer-details {
-    margin: 20px 0;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
+        .btn-call:hover {
+            background-color: #2563eb; /* Shifts to a brighter blue shade on hover */
+        }
 
-.privacy-box {
-  max-width: 600px;
-  margin: 30px auto;
-  font-size: 0.8rem;
-  color: #475569;
-  border-left: 2px solid var(--accent-blue);
-  padding-left: 20px;
-  text-align: left;
-}
+        footer {
+            padding: 80px 20px; /* Vertical and horizontal spacing for the footer section */
+            background: #010409; /* Sets the base background to near-black for the footer */
+            text-align: center; /* Centers all footer text and elements */
+            border-top: 1px solid #1e293b; /* Visual separator between content and footer */
+        }
+
+        .footer-tagline {
+            color: var(--text-muted); /* Uses steel grey for the footer slogan */
+            margin-bottom: 30px; /* Spacing between the slogan and the privacy section */
+        }
+
+        .privacy-box {
+            max-width: 900px; /* Restricts the legal text width for better horizontal scanning */
+            margin: 30px auto; /* Centers the box and adds vertical spacing */
+            font-size: 0.75rem; /* Small font size suitable for legal/compliance text */
+            color: #475569; /* Muted color to keep legal text secondary to branding */
+            text-align: center; /* Centers the piped legal information */
+            line-height: 1.8; /* Increased vertical space between legal lines */
+        }
+
+        .footer-text {
+            margin-top: 40px; /* Spacing before the copyright line */
+            color: var(--text-muted); /* Applies steel grey for the copyright text */
+            font-size: 0.85rem; /* Sets font size for the copyright info */
+        }
+
+        @media (max-width: 600px) {
+            .action-container {
+                flex-direction: column; /* Stacks hero buttons vertically on small screens */
+                align-items: center; /* Centers stacked buttons */
+            }
+            .btn {
+                width: 80%; /* Sets buttons to fill most of the screen width on mobile */
+            }
+        }
